@@ -99,58 +99,6 @@ async def is_subscribed(bot, query):
         await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
     if spoll:
         await msg.message.delete()
-
-async def auto_filter(client, message):
-    if re.findall("((^\/|^,|^!|^\.|^[\U0001F600-\U000E007F]).*)", message.text):
-        return
-    if 2 < len(message.text) < 100:
-         
-        search = message.text
-        files, offset, total_results = await get_search_results(search.lower(), offset=0)
-        if not files:
-            return
-        if SINGLE_BUTTON:
-            btn = [
-                [
-                    InlineKeyboardButton(
-                        text=f"[{get_size(file.file_size)}] {file.file_name}", callback_data=f'files#{file.file_id}'
-                    ),
-                ]
-                for file in files
-            ]
-        else:
-            btn = [
-                [
-                    InlineKeyboardButton(
-                        text=f"{file.file_name}",
-                        callback_data=f'files#{file.file_id}',
-                    ),
-                    InlineKeyboardButton(
-                        text=f"{get_size(file.file_size)}",
-                        callback_data=f'files_#{file.file_id}',
-                    ),
-                ]
-                for file in files
-            ]
-
-        if offset != "":
-            key = f"{message.chat.id}-{message.message_id}"
-            BUTTONS[key] = search
-            req = message.from_user.id if message.from_user else 0
-            btn.append(
-                [InlineKeyboardButton(text=f"🗓 1/{round(int(total_results)/10)}",callback_data="pages"), InlineKeyboardButton(text="NEXT ⏩",callback_data=f"next_{req}_{key}_{offset}")]
-            )
-        else:
-            btn.append(
-                [InlineKeyboardButton(text="🗓 1/1",callback_data="pages")]
-            )
-        imdb=await get_poster(search)
-        if imdb and imdb.get('poster'):
-            await message.reply_photo(photo=imdb.get('poster'), caption=f"<b>Qᴜᴇʀʏ: {search}</b> \n‌‌‌‌Iᴍᴅʙ Dᴀᴛᴀ:\n\n🏷 Tɪᴛʟᴇ: <a href={imdb['url']}>{imdb.get('title')}</a>\n🎭 Gᴇɴʀᴇs: {imdb.get('genres')}\n📆 Yᴇᴀʀ: <a href={imdb['url']}/releaseinfo>{imdb.get('year')}</a>\n🌟 Rᴀᴛɪɴɢ: <a href={imdb['url']}/ratings>{imdb.get('rating')}</a> / 10", reply_markup=InlineKeyboardMarkup(btn))
-        elif imdb:
-            await message.reply_text(f"<b>Qᴜᴇʀʏ: {search}</b> \n‌‌‌‌Iᴍᴅʙ Dᴀᴛᴀ:\n\n🏷 Tɪᴛʟᴇ: <a href={imdb['url']}>{imdb.get('title')}</a>\n🎭 Gᴇɴʀᴇs: {imdb.get('genres')}\n📆 Yᴇᴀʀ: <a href={imdb['url']}/releaseinfo>{imdb.get('year')}</a>\n🌟 Rᴀᴛɪɴɢ: <a href={imdb['url']}/ratings>{imdb.get('rating')}</a> / 10", reply_markup=InlineKeyboardMarkup(btn))
-        else:
-            await message.reply_text(f"<b>Hᴇʀᴇ Is Wʜᴀᴛ I Fᴏᴜɴᴅ Iɴ Mʏ Dᴀᴛᴀʙᴀsᴇ Fᴏʀ Yᴏᴜʀ Qᴜᴇʀʏ {search} ‌‌‌‌‎ </b>", reply_markup=InlineKeyboardMarkup(btn))
     
     
 @Client.on_message(filters.group & filters.text)
