@@ -9,8 +9,9 @@ from presets import Presets
 from base64 import b64encode
 from init import user_message
 from helper.file_size import get_size
+from imdb import IMDb
 from pyrogram import Client, filters
-from pyrogram.errors import FloodWait
+from pyrogram.errors import InputUserDeactivated, UserNotParticipant, FloodWait, UserIsBlocked, PeerIdInvalid
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
 if os.environ.get("ENV", False):
@@ -18,7 +19,14 @@ if os.environ.get("ENV", False):
 else:
     from config import Config
 
+imdb = IMDb() 
 
+BANNED = {}
+SMART_OPEN = '“'
+SMART_CLOSE = '”'
+START_CHAR = ('\'', '"', SMART_OPEN)
+    
+    
 @Client.on_message(filters.group & filters.text)
 async def query_mgs(client: Bot, message: Message):
     query_message = message.text
