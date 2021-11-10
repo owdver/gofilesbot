@@ -1,3 +1,9 @@
 Pyrogram==1.1.9
 TgCrypto
+pymongo[srv]==3.11.4
+motor==2.4.0
+marshmallow==3.12.2
+umongo==3.0.0
+requests
+imdbpy
 
