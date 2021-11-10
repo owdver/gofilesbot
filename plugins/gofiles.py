@@ -19,87 +19,6 @@ if os.environ.get("ENV", False):
     from sample_config import Config
 else:
     from config import Config
-
-imdb = IMDb() 
-
-BANNED = {}
-SMART_OPEN = '“'
-SMART_CLOSE = '”'
-START_CHAR = ('\'', '"', SMART_OPEN)
-
-# temp db for banned 
-class temp(object):
-    BANNED_USERS = []
-    BANNED_CHATS = []
-    ME = None
-    CURRENT=int(os.environ.get("SKIP", 2))
-    CANCEL = False
-    MELCOW = {}
-    U_NAME = None
-    B_NAME = None
-
-async def is_subscribed(bot, query):
-    try:
-        user = await bot.get_chat_member(AUTH_CHANNEL, query.from_user.id)
-    except UserNotParticipant:
-        pass
-    except Exception as e:
-        logger.exception(e)
-    else:
-        if user.status != 'kicked':
-            return True
-
-    return False
-
-    imdb = await get_poster(search, file=(files[0]).file_name) if IMDB else None
-    if imdb:
-        cap = IMDB_TEMPLATE.format(
-            query = search,
-            title = imdb['title'],
-            votes = imdb['votes'],
-            aka = imdb["aka"],
-            seasons = imdb["seasons"],
-            box_office = imdb['box_office'],
-            localized_title = imdb['localized_title'],
-            kind = imdb['kind'],
-            imdb_id = imdb["imdb_id"],
-            cast = imdb["cast"],
-            runtime = imdb["runtime"],
-            countries = imdb["countries"],
-            certificates = imdb["certificates"],
-            languages = imdb["languages"],
-            director = imdb["director"],
-            writer = imdb["writer"],
-            producer = imdb["producer"],
-            composer = imdb["composer"],
-            cinematographer = imdb["cinematographer"],
-            music_team = imdb["music_team"],
-            distributors = imdb["distributors"],
-            release_date = imdb['release_date'],
-            year = imdb['year'],
-            genres = imdb['genres'],
-            poster = imdb['poster'],
-            plot = imdb['plot'],
-            rating = imdb['rating'],
-            url = imdb['url']
-        )
-    else:
-        cap = f"Here is what i found for your query {search}"
-    if imdb and imdb.get('poster'):
-        try:
-            await message.reply_photo(photo=imdb.get('poster'), caption=cap, reply_markup=InlineKeyboardMarkup(btn))
-        except (MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty):
-            pic = imdb.get('poster')
-            poster = pic.replace('.jpg', "._V1_UX360.jpg")
-            await message.reply_photo(photo=poster, caption=cap, reply_markup=InlineKeyboardMarkup(btn))
-        except Exception as e:
-            logger.exception(e)
-            await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
-    else:
-        await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
-    if spoll:
-        await msg.message.delete()
-    
     
 @Client.on_message(filters.group & filters.text)
 async def query_mgs(client: Bot, message: Message):
@@ -115,7 +34,7 @@ async def query_mgs(client: Bot, message: Message):
         try:
             for channel in Config.CHANNELS:
                 # Looking for Document type in messages
-                async for messages in client.USER.search_messages(channel, query_message, filter="document", limit=50):
+                async for messages in client.USER.search_messages(channel, query_message, filter="document", limit=10):
                     doc_file_names = messages.document.file_name
                     file_size = get_size(messages.document.file_size)
                     if re.compile(rf'{doc_file_names}', re.IGNORECASE):
@@ -130,7 +49,6 @@ async def query_mgs(client: Bot, message: Message):
                             secret_query = base64_bytes.decode("ascii")
                             await client.send_message(
                                 chat_id=message.chat.id,
-                                photo=IMDB_TEMPLATE.poster,
                                 text=Presets.ASK_PM_TEXT,
                                 reply_to_message_id=message.message_id,
                                 reply_markup=InlineKeyboardMarkup(
@@ -155,7 +73,7 @@ async def query_mgs(client: Bot, message: Message):
                             time.sleep(e.x)
                         user_message[id] = message.message_id
                 # Looking for video type in messages
-                async for messages in client.USER.search_messages(channel, query_message, filter="video", limit=50):
+                async for messages in client.USER.search_messages(channel, query_message, filter="video", limit=10):
                     vid_file_names = messages.caption
                     file_size = get_size(messages.video.file_size)
                     if re.compile(rf'{vid_file_names}', re.IGNORECASE):
