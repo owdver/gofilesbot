@@ -43,7 +43,7 @@ class Presets(object):
     START_TXT = """<b>Hᴇʟᴏ {},\nMʏ Nᴀᴍᴇ Is <a href='https://t.me/OB_ANYFILTERBOT'>Sᴄᴀʀʟᴇᴛᴛ</a>, I Cᴀɴ Pʀᴏᴠɪᴅᴇ Mᴏᴠɪᴇs, Jᴜsᴛ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ Aɴᴅ Eɴᴊᴏʏ 😍</b>"""
     
     
-    HELP_TXT = """<b>Hey {},\nHere Is The Help For Using This Bot\n\n<i>! Bot Button For How to use this bot\n! Group Button For How to Connect This Bot and Your Group\n! Channel Button For How to add Your Channel To Database</i>"""
+    HELP_TXT = """<b>Hey {},\nHere Is The Help For Using This Bot\n\n<i>- Bot Button For How to use this bot\n- Group Button For How to Connect This Bot and Your Group\n- Channel Button For How to add Your Channel To Database</i>"""
     
     
     ABOUT_TXT ="""<b>✯ Mʏ Nᴀᴍᴇ: Sᴄᴀʀʟᴇᴛᴛ Jᴏʜᴀɴssᴏɴ\n✯ Cʀᴇᴀᴛᴏʀ: Oᴡᴅᴠᴇʀ Bᴏᴛ\n✯ Lɪʙʀᴀʀʏ: Pʏʀᴏɢʀᴀᴍ\n✯ Lᴀɴɢᴜᴀɢᴇ: Pʏᴛʜᴏɴ 3\n✯ Bᴏᴛ Sᴇʀᴠᴇʀ: Hᴇʀᴏᴋᴜ\n✯ Bᴜɪʟᴅ Sᴛᴀᴛᴜs: ᴠ1.0.6 [ Bᴇᴛᴀ ]</b>"""
@@ -52,10 +52,10 @@ class Presets(object):
     SOURCE_TXT = """<b>Nᴏᴛᴇ:</b>\n- Sᴄᴀʀʟᴇᴛᴛ Jᴏʜᴀɴssᴏɴ Is A Cʟᴏɴᴇ Oғ gofiles\n- Sᴏᴜʀᴄᴇ - https://github.com/m4mallu/gofilesbot\n\nUpdates Channel - @OB_LINKS"""
     
     
-    HOWTO_USE = """<i>1. Just go to a group where am exist (Official Group @OB_MG) \n2. Ask a movie in format to know more click <b>MRequest</b> Button\n\3. When i will reply for your MRequest come back here</i>"""
+    HOWTO_USE = """<i>- Just go to a group where am exist (Official Group @OB_MG) \n- Ask a movie in format to know more click <b>MRequest</b> Button\n\- When i will reply for your MRequest come back here</i>"""
 
     
-    FORMAT = """<b>Things to look out for when asking for a movie in a ma group 👇</b><i>\n\n<b>1.</b> Asking for an unreleased or predvd (HQRip, Camrip, DVDScr) movie is a strictly prohibited \n<b>2.</b> Never send kittumo, undo...etc while request a movie\n<b>3.</b> Ask movies in correct spelling\n<b>4.</b> If you have not received the movie by sending the correct spelling, send it again with the year \n<b>eg: (Kuruthi (2021) or Kuruthi 2021)</b></i>"""
+    FORMAT = """<b>Things to look out for when asking for a movie in a ma group 👇</b><i>\n\n<b>1.</b> Asking for an unreleased or predvd (HQRip, Camrip, DVDScr) movie is a strictly prohibited \n<b>2.</b> Never send Send, Please,Kittumo, Undo...etc while request a movie\n<b>3.</b> Ask movies in correct spelling\n<b>4.</b> If you have not received the movie by sending the correct spelling, send it again with the year \n<b>eg: Kuruthi (2021) or Kuruthi 2021</b></i>"""
     
     
-    CHANNEL = """<b>How to add your channel files to this bot</b>\n\n1. <i>Add This Bot To Your Channel As Admin</i>\n2. <i>Send Your Channel Username or Invite Link in @OwDvEr_BoT</i>\n<b>Eg:</b><code>My Channel Username: @OB_BACKUPGROUND \nAdd this to your @OB_ANYFILTERBOT database</code>"""
+    CHANNEL = """<b>How to add your channel files to this bot</b>\n\n1. <i>- Add This Bot To Your Channel As Admin</i>\n2. <i>- Send Your Channel Username or Invite Link in @OwDvEr_BoT</i>\n<b>Eg:</b><code>My Channel Username: @OB_BACKUPGROUND \nAdd this to your @OB_ANYFILTERBOT database</code>"""
