@@ -4,6 +4,7 @@ class Presets(object):
     CAPTION_TEXT_DOC = "\n\n<b>File Name:</b> {}\n\n<b>Format:</b> {}\n<b>Size:</b> {}"
     CAPTION_TEXT_VID = "\n\n<b>File Name:</b> {}\n\n<b>Size:</b> {}"
     ASK_PM_TEXT = "<b>Click the below button</b>"
+    WELCOME_PIC = "https://telegra.ph/file/5477b22d4d33d4167a8ca.jpg"
     WELCOME_TEXT = "Hello.. <b>{}</b>\n<code>I can help you getting movies from</code> @MovieKeralam. " \
                    "<code>Just Keep this message live Here</code>😉\n\n" \
                    "<b>My code can be seen: </b><a href='https://github.com/m4mallu/gofilesbot'> HERE</a>"
