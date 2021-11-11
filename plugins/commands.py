@@ -266,7 +266,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('How to use', callback_data='howtouse'),
             InlineKeyboardButton('', callback_data='autofilter')
             ],[
-            InlineKeyboardButton('Cᴏɴɴᴇᴄᴛɪᴏɴ', callback_data='coct'),
+            InlineKeyboardButton('group', callback_data='group'),
             InlineKeyboardButton('Exᴛʀᴀ Mᴏᴅs', callback_data='extra')
             ],[
             InlineKeyboardButton('🏠 Hᴏᴍᴇ', callback_data='start'),
@@ -305,7 +305,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "howtouse":
         buttons = [[
             InlineKeyboardButton('👩‍🦯 Bᴀᴄᴋ', callback_data='help'),
-            InlineKeyboardButton('❗ MRequest', callback_data='mrequest')
+            InlineKeyboardButton('ℹ️ MRequest', callback_data='mrequest')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
