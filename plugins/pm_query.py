@@ -4,13 +4,14 @@ import re
 import os
 import time
 import asyncio
-
+import random
 from bot import Bot
 from presets import Presets
 from base64 import b64decode
 from helper.file_size import get_size
 from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram.errors import FloodWait
+from pyrogram.errors.exceptions.bad_request_400 import ChatAdminRequired
 from pyrogram import Client, filters
 
 if os.environ.get("ENV", False):
@@ -43,19 +44,6 @@ async def start(client, message):
         query_bytes = query_message.encode("ascii")
         base64_bytes = b64decode(query_bytes)
         secret_query = base64_bytes.decode("ascii")
-    except Exception:
-        msg = await client.send_message(
-            chat_id=message.chat.id,
-            text=Presets.BOT_PM_TEXT,
-            reply_to_message_id=message.message_id
-        )
-        time.sleep(6)
-        try:
-            await msg.delete()
-            await message.delete()
-        except Exception:
-            pass
-        return
     try:
         await client.send_photo(
             chat_id=message.chat.id,
