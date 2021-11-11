@@ -56,6 +56,8 @@ async def start(client, message):
             parse_mode='html',
             disable_web_page_preview=True
         )
+    except Exception:
+            pass
         if secret_query:
             for channel in Config.CHANNELS:
                 # Looking for Document type in messages
