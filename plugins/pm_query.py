@@ -59,7 +59,7 @@ async def start(client, message):
     try:
         await client.send_photo(
             chat_id=message.chat.id,
-            photo=Presets.WELCOME_PIC
+            photo=Presets.WELCOME_PIC,
             text=Presets.WELCOME_TEXT.format(message.from_user.first_name),
             parse_mode='html',
             disable_web_page_preview=True
