@@ -88,7 +88,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ])
 
         await query.message.edit_text(
-            f"Gʀᴏᴜᴘ Nᴀᴍᴇ : **{title}**\nGʀᴏᴜᴘ ɪᴅ : `{group_id}`",
+            f"Gʀᴏᴜᴘ Nᴀᴍᴇ : **{title}**\nGʀᴏᴜᴘ ɪᴅ : `{group_id}`\nGʀᴏᴜᴘ : **{group_username}**",
             reply_markup=keyboard,
             parse_mode="md"
         )
