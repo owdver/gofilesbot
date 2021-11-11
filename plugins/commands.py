@@ -263,11 +263,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "help":
         buttons = [[
-            InlineKeyboardButton('How to use', callback_data='howtouse'),
-            InlineKeyboardButton('', callback_data='autofilter')
+            InlineKeyboardButton('Bot', callback_data='bot'),
+            InlineKeyboardButton('Group', callback_data='group')
             ],[
-            InlineKeyboardButton('group', callback_data='group'),
-            InlineKeyboardButton('Exᴛʀᴀ Mᴏᴅs', callback_data='extra')
+            InlineKeyboardButton('Channel', callback_data='channel'),
+            InlineKeyboardButton('Support', callback_data='support')
             ],[
             InlineKeyboardButton('🏠 Hᴏᴍᴇ', callback_data='start'),
             InlineKeyboardButton('🔐 Cʟᴏsᴇ', callback_data='close_data')
@@ -294,7 +294,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "source":
         buttons = [[
-            InlineKeyboardButton('👩‍🦯 Bᴀᴄᴋ', callback_data='about')
+            InlineKeyboardButton('👩‍🦯 Bᴀᴄᴋ', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -302,10 +302,30 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
         )
-    elif query.data == "howtouse":
+    elif query.data == "group":
+        buttons = [[
+            InlineKeyboardButton('👩‍🦯 Bᴀᴄᴋ', callback_data='help')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=Presets.SOURCE_TXT,
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
+    elif query.data == "channel":
+        buttons = [[
+            InlineKeyboardButton('👩‍🦯 Bᴀᴄᴋ', callback_data='help')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=Presets.CHANNEL,
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
+    elif query.data == "bot":
         buttons = [[
             InlineKeyboardButton('👩‍🦯 Bᴀᴄᴋ', callback_data='help'),
-            InlineKeyboardButton('ℹ️ MRequest', callback_data='mrequest')
+            InlineKeyboardButton('ℹ️ Format', callback_data='format')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -313,23 +333,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
         )
-    elif query.data == "mrequest":
+    elif query.data == "format":
         buttons = [[
             InlineKeyboardButton('👩‍🦯 Bᴀᴄᴋ', callback_data='howtouse')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
-            text=Presets.MREQUEST,
-            reply_markup=reply_markup,
-            parse_mode='html'
-        )
-    elif query.data == "autofilter":
-        buttons = [[
-            InlineKeyboardButton('👩‍🦯 Bᴀᴄᴋ', callback_data='help')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.AUTOFILTER_TXT,
+            text=Presets.FORMAT,
             reply_markup=reply_markup,
             parse_mode='html'
         )
