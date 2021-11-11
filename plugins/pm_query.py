@@ -11,7 +11,7 @@ from base64 import b64decode
 from helper.file_size import get_size
 from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram.errors import FloodWait
-from pyrogram.types import Client, filters
+from pyrogram import Client, filters
 
 if os.environ.get("ENV", False):
     from sample_config import Config
