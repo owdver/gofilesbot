@@ -45,8 +45,10 @@ class Presets(object):
     
     #Added By @OwDvEr!
     
+    HELP_TXT = """Hey {}\nHere Is The Help For Using This Bot"""
     
-        HELP_TXT = """Hey {}\nHere Is The Help For Using This Bot"""
-        
-        
-        ABOUT_TXT ="""✯ Mʏ Nᴀᴍᴇ: Sᴄᴀʀʟᴇᴛᴛ Jᴏʜᴀɴssᴏɴ\n✯ Cʀᴇᴀᴛᴏʀ: Oᴡᴅᴠᴇʀ Bᴏᴛ\n✯ Lɪʙʀᴀʀʏ: Pʏʀᴏɢʀᴀᴍ\n✯ Lᴀɴɢᴜᴀɢᴇ: Pʏᴛʜᴏɴ 3\n✯ Bᴏᴛ Sᴇʀᴠᴇʀ: Hᴇʀᴏᴋᴜ\n✯ Bᴜɪʟᴅ Sᴛᴀᴛᴜs: ᴠ1.0.6 [ Bᴇᴛᴀ ]"""
+    
+    ABOUT_TXT ="""✯ Mʏ Nᴀᴍᴇ: Sᴄᴀʀʟᴇᴛᴛ Jᴏʜᴀɴssᴏɴ\n✯ Cʀᴇᴀᴛᴏʀ: Oᴡᴅᴠᴇʀ Bᴏᴛ\n✯ Lɪʙʀᴀʀʏ: Pʏʀᴏɢʀᴀᴍ\n✯ Lᴀɴɢᴜᴀɢᴇ: Pʏᴛʜᴏɴ 3\n✯ Bᴏᴛ Sᴇʀᴠᴇʀ: Hᴇʀᴏᴋᴜ\n✯ Bᴜɪʟᴅ Sᴛᴀᴛᴜs: ᴠ1.0.6 [ Bᴇᴛᴀ ]"""
+
+    
+    
