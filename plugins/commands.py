@@ -263,8 +263,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "help":
         buttons = [[
-            InlineKeyboardButton('Mᴀɴᴜᴇʟ Fɪʟᴛᴇʀ', callback_data='manuelfilter'),
-            InlineKeyboardButton('Aᴜᴛᴏ Fɪʟᴛᴇʀ', callback_data='autofilter')
+            InlineKeyboardButton('How to use', callback_data='howtouse'),
+            InlineKeyboardButton('', callback_data='autofilter')
             ],[
             InlineKeyboardButton('Cᴏɴɴᴇᴄᴛɪᴏɴ', callback_data='coct'),
             InlineKeyboardButton('Exᴛʀᴀ Mᴏᴅs', callback_data='extra')
@@ -302,14 +302,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
         )
-    elif query.data == "manuelfilter":
+    elif query.data == "howtouse":
         buttons = [[
             InlineKeyboardButton('👩‍🦯 Bᴀᴄᴋ', callback_data='help'),
             InlineKeyboardButton('⏹️ Bᴜᴛᴛᴏɴs', callback_data='button')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
-            text=Presets.MANUELFILTER_TXT,
+            text=Presets.HOWTO_USE,
             reply_markup=reply_markup,
             parse_mode='html'
         )
