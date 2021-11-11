@@ -22,7 +22,6 @@ else:
 
 @Client.on_message(filters.command("start"))
 async def start(client, message):
-    if len(message.command) != 2:
         buttons = [[
             InlineKeyboardButton('➕ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘs ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
         ],[
