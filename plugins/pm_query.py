@@ -45,7 +45,7 @@ async def start(client, message):
         base64_bytes = b64decode(query_bytes)
         secret_query = base64_bytes.decode("ascii")
     except Exception:
-            pass
+        return
         if secret_query:
             for channel in Config.CHANNELS:
                 # Looking for Document type in messages
