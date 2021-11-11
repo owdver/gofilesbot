@@ -54,6 +54,7 @@ class Presets(object):
     ABOUT_TXT ="""<b>✯ Mʏ Nᴀᴍᴇ: Sᴄᴀʀʟᴇᴛᴛ Jᴏʜᴀɴssᴏɴ\n✯ Cʀᴇᴀᴛᴏʀ: Oᴡᴅᴠᴇʀ Bᴏᴛ\n✯ Lɪʙʀᴀʀʏ: Pʏʀᴏɢʀᴀᴍ\n✯ Lᴀɴɢᴜᴀɢᴇ: Pʏᴛʜᴏɴ 3\n✯ Bᴏᴛ Sᴇʀᴠᴇʀ: Hᴇʀᴏᴋᴜ\n✯ Bᴜɪʟᴅ Sᴛᴀᴛᴜs: ᴠ1.0.6 [ Bᴇᴛᴀ ]</b>"""
 
     
-    SOURCE_TXT = """<b>Nᴏᴛᴇ:</b>\n- Sᴄᴀʀʟᴇᴛᴛ Jᴏʜᴀɴssᴏɴ Is A Cʟᴏɴᴇ Oғ\n- Sᴏᴜʀᴄᴇ - https://github.com/m4mallu/gofilesbot\n\nUpdates Channel - @OB_LINKS"""
+    SOURCE_TXT = """<b>Nᴏᴛᴇ:</b>\n- Sᴄᴀʀʟᴇᴛᴛ Jᴏʜᴀɴssᴏɴ Is A Cʟᴏɴᴇ Oғ gofiles\n- Sᴏᴜʀᴄᴇ - https://github.com/m4mallu/gofilesbot\n\nUpdates Channel - @OB_LINKS"""
     
     
+    HOWTO_USE = "<i>1. Just go to a group where am exist (Official Group @OB_MG) \n2. Ask a movie in format to know more click <b>MRequest</b> Button\n\3. When i will reply for your MRequest come back here</i>"
