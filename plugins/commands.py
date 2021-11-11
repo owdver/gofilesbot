@@ -203,7 +203,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             
         try:
             if AUTH_CHANNEL and not await is_subscribed(client, query):
-                await query.answer(url=f"https://t.me/{temp.U_NAME}?start={file_id}")
+                await query.answer(url=f"https://t.me/OB_ANYFILTERBOT?start={file_id}")
                 return
             else:
                 await client.send_cached_media(
@@ -335,7 +335,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "format":
         buttons = [[
-            InlineKeyboardButton('👩‍🦯 Bᴀᴄᴋ', callback_data='howtouse')
+            InlineKeyboardButton('👩‍🦯 Bᴀᴄᴋ', callback_data='bot')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
