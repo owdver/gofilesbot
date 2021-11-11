@@ -44,7 +44,27 @@ async def start(client, message):
         query_bytes = query_message.encode("ascii")
         base64_bytes = b64decode(query_bytes)
         secret_query = base64_bytes.decode("ascii")
+    except Exception:
+        msg = await message.reply_photo(
+            photo=random.choice(Presets.WELCOME_PIC),
+            caption=Presets.WELCOME_TEXT.format(message.from_user.mention),
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
+        time.sleep(e.x)
+        try:
+            await msg.delete()
+            await message.delete()
+        except Exception:
+            pass
         return
+    try:
+        await message.reply_photo(
+            photo=random.choice(Presets.WELCOME_PIC),
+            caption=Presets.WELCOME_TEXT.format(message.from_user.mention),
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
         if secret_query:
             for channel in Config.CHANNELS:
                 # Looking for Document type in messages
