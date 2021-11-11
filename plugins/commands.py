@@ -203,7 +203,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             
         try:
             if AUTH_CHANNEL and not await is_subscribed(client, query):
-                await query.answer(url=f"https://t.me/OB_ANYFILTERBOT?start={file_id}")
+                await query.answer(url=f"https://t.me/OB_FILTERROBOT?start={file_id}")
                 return
             else:
                 await client.send_cached_media(
@@ -215,9 +215,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
         except UserIsBlocked:
             await query.answer('Uɴʙʟᴏᴄᴋ Tʜᴇ Bᴏᴛ Mᴀʜɴ !',show_alert = True)
         except PeerIdInvalid:
-            await query.answer(url=f"https://t.me/{temp.U_NAME}?start={file_id}")
+            await query.answer(url=f"https://t.me/OB_FILTERROBOT?start={file_id}")
         except Exception as e:
-            await query.answer(url=f"https://t.me/{temp.U_NAME}?start={file_id}")
+            await query.answer(url=f"https://t.me/OB_FILTERROBOT?start={file_id}")
 
     elif query.data.startswith("checksub"):
         if AUTH_CHANNEL and not await is_subscribed(client, query):
@@ -247,7 +247,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer()
     elif query.data == "start":
         buttons = [[
-            InlineKeyboardButton('➕ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘs ➕', url='http://t.me/OB_ANYFILTERBOT?startgroup=true')
+            InlineKeyboardButton('➕ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘs ➕', url='http://t.me/OB_FILTERROBOT?startgroup=true')
             ],[
             InlineKeyboardButton('🔍 Sᴇᴀʀᴄʜ', switch_inline_query_current_chat=''),
             InlineKeyboardButton('🤖 Uᴘᴅᴀᴛᴇs', url='https://t.me/OB_LINKS')
