@@ -47,9 +47,9 @@ async def bot_pm(client: Bot, message: Message):
             pass
         return
     try:
-        await client.send_message(
+        await client.send_photo(
             chat_id=message.chat.id,
-            text=Presets.WELCOME_TEXT.format(message.from_user.first_name),
+            photo=https://telegra.ph/file/5477b22d4d33d4167a8ca.jpg,
             parse_mode='html',
             disable_web_page_preview=True
         )
