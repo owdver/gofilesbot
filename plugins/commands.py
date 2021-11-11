@@ -5,7 +5,7 @@ import pyrogram
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram import Client, filters
 from pyrogram.errors import FloodWait, UserIsBlocked, MessageNotModified, PeerIdInvalid
-from presets.Presets import WELCOME_TEXT, HELP_TXT, ABOUT_TXT
+from presets import WELCOME_TEXT, HELP_TXT, ABOUT_TXT
 from database.users_chats_db import db
   
 @Client.on_callback_query()
