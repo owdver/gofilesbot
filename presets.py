@@ -57,4 +57,7 @@ class Presets(object):
     SOURCE_TXT = """<b>Nᴏᴛᴇ:</b>\n- Sᴄᴀʀʟᴇᴛᴛ Jᴏʜᴀɴssᴏɴ Is A Cʟᴏɴᴇ Oғ gofiles\n- Sᴏᴜʀᴄᴇ - https://github.com/m4mallu/gofilesbot\n\nUpdates Channel - @OB_LINKS"""
     
     
-    HOWTO_USE = "<i>1. Just go to a group where am exist (Official Group @OB_MG) \n2. Ask a movie in format to know more click <b>MRequest</b> Button\n\3. When i will reply for your MRequest come back here</i>"
+    HOWTO_USE = """<i>1. Just go to a group where am exist (Official Group @OB_MG) \n2. Ask a movie in format to know more click <b>MRequest</b> Button\n\3. When i will reply for your MRequest come back here</i>"
+
+    
+    
