@@ -45,7 +45,7 @@ class Presets(object):
     
     #Added By @OwDvEr!
     
-    START_TXT = """Hᴇʟᴏ {}, Mʏ Nᴀᴍᴇ Is <a href='https://t.me/OB_ANYFILTERBOT'>Sᴄᴀʀʟᴇᴛᴛ</a>, I Cᴀɴ Pʀᴏᴠɪᴅᴇ Mᴏᴠɪᴇs, Jᴜsᴛ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ Aɴᴅ Eɴᴊᴏʏ 😍"""
+    START_TXT = """Hᴇʟᴏ {},\nMʏ Nᴀᴍᴇ Is <a href='https://t.me/OB_ANYFILTERBOT'>Sᴄᴀʀʟᴇᴛᴛ</a>, I Cᴀɴ Pʀᴏᴠɪᴅᴇ Mᴏᴠɪᴇs, Jᴜsᴛ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ Aɴᴅ Eɴᴊᴏʏ 😍"""
     
     
     HELP_TXT = """Hey {},\nHere Is The Help For Using This Bot"""
