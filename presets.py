@@ -59,3 +59,8 @@ class Presets(object):
     
     
     CHANNEL = """<b>How to add your channel files to this bot</b>\n\n1. <i>- Add This Bot To Your Channel As Admin</i>\n2. <i>- Send Your Channel Username or Invite Link in @OwDvEr_BoT</i>\n<b>Eg:</b><code>My Channel Username: @OB_BACKUPGROUND \nAdd this to your @OB_ANYFILTERBOT database</code>"""
+
+    
+    GROUP = """<b>How To Connect this bot & your group</b>\n\- Add me to your Group & and make me admin\n\n Thats all :)"""
+    
+    
