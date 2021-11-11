@@ -60,4 +60,7 @@ class Presets(object):
     HOWTO_USE = """<i>1. Just go to a group where am exist (Official Group @OB_MG) \n2. Ask a movie in format to know more click <b>MRequest</b> Button\n\3. When i will reply for your MRequest come back here</i>"
 
     
+    MREQUEST = "<b>Things to look out for when asking for a movie in a ma group 👇</b><i>\n\n1. Asking for an unreleased or predvd (HQRip, Camrip, DVDScr) movie is a strictly prohibited \n2. Never send kittumo, undo...etc while request a movie\n3. Ask movies in correct spelling\n4. If you have not received the movie by sending the correct spelling, send it again with the year eg;(Kuruthi (2021) or Kuruthi 2021)</i>"
+    
+    
     
