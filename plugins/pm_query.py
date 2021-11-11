@@ -3,6 +3,7 @@
 import re
 import os
 import time
+import async
 
 from bot import Bot
 from presets import Presets
