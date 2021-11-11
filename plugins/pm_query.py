@@ -34,8 +34,8 @@ async def start(client, message):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
-            photo=random.choice(PICS),
-            caption=script.START_TXT.format(message.from_user.mention),
+            photo=random.choice(Presets.WELCOME_PIC),
+            caption=Presets.WELCOME_TEXT.format(message.from_user.mention),
             reply_markup=reply_markup,
             parse_mode='html'
         )
@@ -48,16 +48,6 @@ async def start(client, message):
     except Exception:
             pass
         return
-    try:
-        await client.send_photo(
-            chat_id=message.chat.id,
-            photo=Presets.WELCOME_PIC,
-            text=Presets.WELCOME_TEXT.format(message.from_user.first_name),
-            parse_mode='html',
-            disable_web_page_preview=True
-        )
-    except Exception:
-            pass
         if secret_query:
             for channel in Config.CHANNELS:
                 # Looking for Document type in messages
