@@ -258,7 +258,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
-            text=script.START_TXT.format(query.from_user.mention),
+            text=START_TXT.format(query.from_user.mention),
             reply_markup=reply_markup,
             parse_mode='html'
         )
@@ -275,7 +275,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
-            text=script.HELP_TXT.format(query.from_user.mention),
+            text=HELP_TXT.format(query.from_user.mention),
             reply_markup=reply_markup,
             parse_mode='html'
         )
@@ -289,7 +289,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
-            text=script.ABOUT_TXT,
+            text=ABOUT_TXT,
             reply_markup=reply_markup,
             parse_mode='html'
         )
@@ -334,71 +334,3 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
         )
-    elif query.data == "coct":
-        buttons = [[
-            InlineKeyboardButton('👩‍🦯 Bᴀᴄᴋ', callback_data='help')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.CONNECTION_TXT,
-            reply_markup=reply_markup,
-            parse_mode='html'
-        )
-    elif query.data == "extra":
-        buttons = [[
-            InlineKeyboardButton('👩‍🦯 Bᴀᴄᴋ', callback_data='help'),
-            InlineKeyboardButton('👮‍♂️ Aᴅᴍɪɴ', callback_data='admin')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.EXTRAMOD_TXT,
-            reply_markup=reply_markup,
-            parse_mode='html'
-        )
-    elif query.data == "admin":
-        buttons = [[
-            InlineKeyboardButton('👩‍🦯 Bᴀᴄᴋ', callback_data='extra')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.ADMIN_TXT,
-            reply_markup=reply_markup,
-            parse_mode='html'
-        )
-    elif query.data == "stats":
-        buttons = [[
-            InlineKeyboardButton('👩‍🦯 Bᴀᴄᴋ', callback_data='help'),
-            InlineKeyboardButton('♻️', callback_data='rfrsh')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        total = await Media.count_documents()
-        users = await db.total_users_count()
-        chats = await db.total_chat_count()
-        monsize = await db.get_db_size()
-        free = 536870912 - monsize
-        monsize = get_size(monsize)
-        free = get_size(free)
-        await query.message.edit_text(
-            text=script.STATUS_TXT.format(total, users, chats, monsize, free),
-            reply_markup=reply_markup,
-            parse_mode='html'
-        )
-    elif query.data == "rfrsh":
-        await query.answer("Fetching MongoDb DataBase")
-        buttons = [[
-            InlineKeyboardButton('👩‍🦯 Bᴀᴄᴋ', callback_data='help'),
-            InlineKeyboardButton('♻️', callback_data='rfrsh')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        total = await Media.count_documents()
-        users = await db.total_users_count()
-        chats = await db.total_chat_count()
-        monsize = await db.get_db_size()
-        free = 536870912 - monsize
-        monsize = get_size(monsize)
-        free = get_size(free)
-        await query.message.edit_text(
-            text=script.STATUS_TXT.format(total, users, chats, monsize, free),
-            reply_markup=reply_markup,
-            parse_mode='html'
-      )
