@@ -54,6 +54,6 @@ class Presets(object):
     ABOUT_TXT ="""<b>✯ Mʏ Nᴀᴍᴇ: Sᴄᴀʀʟᴇᴛᴛ Jᴏʜᴀɴssᴏɴ\n✯ Cʀᴇᴀᴛᴏʀ: Oᴡᴅᴠᴇʀ Bᴏᴛ\n✯ Lɪʙʀᴀʀʏ: Pʏʀᴏɢʀᴀᴍ\n✯ Lᴀɴɢᴜᴀɢᴇ: Pʏᴛʜᴏɴ 3\n✯ Bᴏᴛ Sᴇʀᴠᴇʀ: Hᴇʀᴏᴋᴜ\n✯ Bᴜɪʟᴅ Sᴛᴀᴛᴜs: ᴠ1.0.6 [ Bᴇᴛᴀ ]</b>"""
 
     
-    SOURCE_TXT = """<b>Nᴏᴛᴇ:</b>\n- Sᴄᴀʀʟᴇᴛᴛ Jᴏʜᴀɴssᴏɴ Is A Cʟᴏɴᴇ Oғ\n- Sᴏᴜʀᴄᴇ - https://github.com/m4mallu/gofilesbot\n\n"""
+    SOURCE_TXT = """<b>Nᴏᴛᴇ:</b>\n- Sᴄᴀʀʟᴇᴛᴛ Jᴏʜᴀɴssᴏɴ Is A Cʟᴏɴᴇ Oғ\n- Sᴏᴜʀᴄᴇ - https://github.com/m4mallu/gofilesbot\n\nUpdates Channel - @OB_LINKS"""
     
     
