@@ -44,6 +44,7 @@ async def start(client, message):
         query_bytes = query_message.encode("ascii")
         base64_bytes = b64decode(query_bytes)
         secret_query = base64_bytes.decode("ascii")
+        return
     try:
         await client.send_photo(
             chat_id=message.chat.id,
