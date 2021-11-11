@@ -7,6 +7,7 @@
   "env": {
         "APP_ID": {"description": "Get this value from https://my.telegram.org", "required": true},
         "API_HASH": {"description": "Get this value from https://my.telegram.org" , "required": true},
+        "PICS": {"description": "Add some telegraph link of pictures .", "required": true},
         "TG_BOT_TOKEN": {"description": "Get Bot Token From BotFather Bot","required": true},
         "AUTH_USERS": {"description": "List of userIDs separated by <space>","required": true},
         "CHANNELS": {"description": "List of Channel IDs separated by <space>","required": true},
