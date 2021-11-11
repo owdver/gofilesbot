@@ -22,21 +22,22 @@ else:
 
 @Client.on_message(filters.command("start"))
 async def start(client, message):
-    if message.chat.type in ['group', 'supergroup']:
-        buttons = [
-            [
-                InlineKeyboardButton('🤖 Uᴘᴅᴀᴛᴇs', url='https://t.me/OB_LINKS')
-            ],
-            [
-                InlineKeyboardButton('ℹ️ Hᴇʟᴘ', url="https://t.me/OB_ANYFILTERBOT?start=help"),
-            ]]
+    if len(message.command) != 2:
+        buttons = [[
+            InlineKeyboardButton('➕ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘs ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+        ],[
+            InlineKeyboardButton('🔍 Sᴇᴀʀᴄʜ', switch_inline_query_current_chat=''),
+            InlineKeyboardButton('🤖 Uᴘᴅᴀᴛᴇs', url='https://t.me/OB_LINKS')
+        ],[
+            InlineKeyboardButton('ℹ️ Hᴇʟᴘ', callback_data='help'),
+            InlineKeyboardButton('😊 Aʙᴏᴜᴛ', callback_data='about')
+        ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-                
-        await client.send_message(
-            chat_id=message.chat.id,
-            text=Presets.WELCOME_TEXT.format(message.from_user.first_name),
-            parse_mode='html',
-            disable_web_page_preview=True
+        await message.reply_photo(
+            photo=random.choice(PICS),
+            caption=script.START_TXT.format(message.from_user.mention),
+            reply_markup=reply_markup,
+            parse_mode='html'
         )
         return
     try:
@@ -44,6 +45,8 @@ async def start(client, message):
         query_bytes = query_message.encode("ascii")
         base64_bytes = b64decode(query_bytes)
         secret_query = base64_bytes.decode("ascii")
+    except Exception:
+            pass
         return
     try:
         await client.send_photo(
