@@ -6,7 +6,6 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQ
 from pyrogram import Client, filters
 from pyrogram.errors import FloodWait, UserIsBlocked, MessageNotModified, PeerIdInvalid
 from presets import Presets
-from database.users_chats_db import db
   
 @Client.on_callback_query()
 async def cb_handler(client: Client, query: CallbackQuery):
