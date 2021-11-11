@@ -11,11 +11,6 @@ class Presets(object):
     ASK_PM_TEXT = "<b>Click the below button</b>"
     
     
-    WELCOME_TEXT = "Hello.. <b>{}</b>\n<code>I can help you getting movies from</code> @MovieKeralam. " \
-                   "<code>Just Keep this message live Here</code>😉\n\n" \
-                   "<b>My code can be seen: </b><a href='https://github.com/m4mallu/gofilesbot'> HERE</a>"
-    
-    
     CLEAN_CHAT_MSG = "⚠️ <b>Deleting all messages..</b>"
     
     
@@ -63,4 +58,4 @@ class Presets(object):
     FORMAT = """<b>Things to look out for when asking for a movie in a ma group 👇</b><i>\n\n<b>1.</b> Asking for an unreleased or predvd (HQRip, Camrip, DVDScr) movie is a strictly prohibited \n<b>2.</b> Never send kittumo, undo...etc while request a movie\n<b>3.</b> Ask movies in correct spelling\n<b>4.</b> If you have not received the movie by sending the correct spelling, send it again with the year \n<b>eg: (Kuruthi (2021) or Kuruthi 2021)</b></i>"""
     
     
-    CHANNEL = """How to add your channel files to this bot\n\n1. Add This Bot To Your Channel As Admin/n2. Send Your Channel Username or Invite Link in @OwDvEr_BoT\n<b>eg:</b><code>My Channel Username: @OB_BACKUPGROUND \nAdd this to your @OB_ANYFILTERBOT database</code>"""
+    CHANNEL = """<b>How to add your channel files to this bot</b>\n\n1. <i>Add This Bot To Your Channel As Admin</i>\n2. <i>Send Your Channel Username or Invite Link in @OwDvEr_BoT</i>\n<b>Eg:</b><code>My Channel Username: @OB_BACKUPGROUND \nAdd this to your @OB_ANYFILTERBOT database</code>"""
