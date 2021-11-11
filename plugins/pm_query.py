@@ -34,7 +34,7 @@ async def bot_pm(client: Bot, message: Message):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
-            photo=random.choice(Presets.WELCOME_PIC),
+            photo=random.choice(Config.PICS),
             caption=Presets.WELCOME_TEXT.format(message.from_user.mention),
             reply_markup=reply_markup,
             parse_mode='html'
