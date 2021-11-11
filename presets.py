@@ -40,7 +40,7 @@ class Presets(object):
     
     #Added By @OwDvEr!
     
-    START_TXT = """<b>Hᴇʟᴏ {},\nMʏ Nᴀᴍᴇ Is <a href='https://t.me/OB_ANYFILTERBOT'>Sᴄᴀʀʟᴇᴛᴛ</a>, I Cᴀɴ Pʀᴏᴠɪᴅᴇ Mᴏᴠɪᴇs, Jᴜsᴛ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ Aɴᴅ Eɴᴊᴏʏ 😍</b>"""
+    START_TXT = """<b>Hᴇʟᴏ {},\nMʏ Nᴀᴍᴇ Is <a href='https://t.me/OB_FILTERROBOT'>Sᴄᴀʀʟᴇᴛᴛ</a>, I Cᴀɴ Pʀᴏᴠɪᴅᴇ Mᴏᴠɪᴇs, Jᴜsᴛ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ Aɴᴅ Eɴᴊᴏʏ 😍</b>"""
     
     
     HELP_TXT = """<b>Hey {},\nHere Is The Help For Using This Bot</b>\n\n<i>- Bot Button For How to use this bot\n- Group Button For How to Connect This Bot and Your Group\n- Channel Button For How to add Your Channel To Database</i>"""
