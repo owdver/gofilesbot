@@ -18,7 +18,7 @@ else:
     from config import Config
 
 
-@Client.on_message(filters.private & filters.text)
+@Client.on_message(filters.command("start")
 async def bot_pm(client: Bot, message: Message):
     if message.text == "/start":
         await client.send_message(
@@ -49,7 +49,8 @@ async def bot_pm(client: Bot, message: Message):
     try:
         await client.send_photo(
             chat_id=message.chat.id,
-            photo=https://telegra.ph/file/5477b22d4d33d4167a8ca.jpg,
+            photo=Presets.WELCOME_PIC
+            text=Presets.WELCOME_TEXT.format(message.from_user.first_name),
             parse_mode='html',
             disable_web_page_preview=True
         )
