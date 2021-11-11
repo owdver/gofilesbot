@@ -23,11 +23,21 @@ else:
 @Client.on_message(filters.private & filters.text)
 async def bot_pm(client: Bot, message: Message):
     if message.text == "/start":
-        await client.send_message(
-            chat_id=message.chat.id,
-            text=Presets.WELCOME_TEXT.format(message.from_user.first_name),
-            parse_mode='html',
-            disable_web_page_preview=True
+        buttons = [[
+            InlineKeyboardButton('➕ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘs ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+        ],[
+            InlineKeyboardButton('🔍 Sᴇᴀʀᴄʜ', switch_inline_query_current_chat=''),
+            InlineKeyboardButton('🤖 Uᴘᴅᴀᴛᴇs', url='https://t.me/OB_LINKS')
+        ],[
+            InlineKeyboardButton('ℹ️ Hᴇʟᴘ', callback_data='help'),
+            InlineKeyboardButton('😊 Aʙᴏᴜᴛ', callback_data='about')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await message.reply_photo(
+            photo=random.choice(Presets.WELCOME_PIC),
+            caption=Presets.WELCOME_TEXT.format(message.from_user.mention),
+            reply_markup=reply_markup,
+            parse_mode='html'
         )
         return
     try:
