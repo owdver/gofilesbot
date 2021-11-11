@@ -49,10 +49,10 @@ class Presets(object):
     ABOUT_TXT ="""<b>✯ Mʏ Nᴀᴍᴇ: Sᴄᴀʀʟᴇᴛᴛ Jᴏʜᴀɴssᴏɴ\n✯ Cʀᴇᴀᴛᴏʀ: Oᴡᴅᴠᴇʀ Bᴏᴛ\n✯ Lɪʙʀᴀʀʏ: Pʏʀᴏɢʀᴀᴍ\n✯ Lᴀɴɢᴜᴀɢᴇ: Pʏᴛʜᴏɴ 3\n✯ Bᴏᴛ Sᴇʀᴠᴇʀ: Hᴇʀᴏᴋᴜ\n✯ Bᴜɪʟᴅ Sᴛᴀᴛᴜs: ᴠ1.0.6 [ Bᴇᴛᴀ ]</b>"""
 
     
-    SOURCE_TXT = """<b>Nᴏᴛᴇ:</b>\n- Sᴄᴀʀʟᴇᴛᴛ Jᴏʜᴀɴssᴏɴ Is A Cʟᴏɴᴇ Oғ gofiles\n- Sᴏᴜʀᴄᴇ - https://github.com/m4mallu/gofilesbot\n\nUpdates Channel - @OB_LINKS"""
+    SOURCE_TXT = """<b>Nᴏᴛᴇ:</b>\n- Sᴄᴀʀʟᴇᴛᴛ Jᴏʜᴀɴssᴏɴ Is A Cʟᴏɴᴇ Oғ gofiles\n- Sᴏᴜʀᴄᴇ - https://github.com/m4mallu/gofilesbot \n\nUpdates Channel - @OB_LINKS"""
     
     
-    HOWTO_USE = """- Just go to a group where am exist\n  (Official Group @OB_MG)\n- Ask a movie in format to know more click Format Button\n- When i will reply for your\n  MRequest come back here"""
+    HOWTO_USE = """- Just go to a group where am exist\n  (Official Group @OB_MG)\n- Ask a movie in format to know more click \n  Format Button\n- When i will reply for your message come back here"""
 
     
     FORMAT = """<b>Things to look out for when asking for a movie in a ma group 👇</b><i>\n\n<b>1.</b> Asking for an unreleased or predvd (HQRip, Camrip, DVDScr) movie is a strictly prohibited \n<b>2.</b> Never send Send, Please,Kittumo, Undo...etc while request a movie\n<b>3.</b> Ask movies in correct spelling\n<b>4.</b> If you have not received the movie by sending the correct spelling, send it again with the year \n<b>eg: Kuruthi (2021) or Kuruthi 2021</b></i>"""
