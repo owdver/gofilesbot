@@ -3,7 +3,7 @@
 import re
 import os
 import time
-import async
+import asyncio
 
 from bot import Bot
 from presets import Presets
