@@ -55,7 +55,7 @@ class Presets(object):
     HOWTO_USE = """- Just go to a group where am exist\n  (Official Group @OB_MG)\n- Ask a movie in format to know more click \n  Format Button\n- When i will reply for your message come back here"""
 
     
-    FORMAT = """<b>Things to look out for when asking for a movie in a ma group 👇</b><i>\n\n<b>1.</b> Asking for an unreleased or predvd (HQRip, Camrip, DVDScr) movie is a strictly prohibited \n<b>2.</b> Never send Send, Please,Kittumo, Undo...etc while request a movie\n<b>3.</b> Ask movies in correct spelling\n<b>4.</b> If you have not received the movie by sending the correct spelling, send it again with the year \n<b>eg: Kuruthi (2021) or Kuruthi 2021</b></i>"""
+    FORMAT = """<b>Things to look out for when asking for a movie in my group 👇</b><i>\n\n<b>1.</b> Asking for an unreleased or predvd (HQRip, Camrip, DVDScr) movie is a strictly prohibited \n<b>2.</b> Never send Send, Please,Kittumo, Undo...etc while request a movie\n<b>3.</b> Ask movies in correct spelling\n<b>4.</b> If you have not received the movie by sending the correct spelling, send it again with the year \n<b>eg: Kuruthi (2021) or Kuruthi 2021</b></i>"""
     
     
     CHANNEL = """<b>How to add your channel files to this bot</b>\n\n1. <i>- Add This Bot To Your Channel As Admin</i>\n2. <i>- Send Your Channel Username or Invite Link in @OwDvEr_BoT</i>\n<b>Eg:</b><code>My Channel Username: @OB_BACKUPGROUND \nAdd this to your @OB_ANYFILTERBOT database</code>"""
