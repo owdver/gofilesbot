@@ -267,7 +267,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('Group', callback_data='group')
             ],[
             InlineKeyboardButton('Channel', callback_data='channel'),
-            InlineKeyboardButton('Support', callback_data='support')
+            InlineKeyboardButton('Support', url='http://t.me/OwDvEr_BoT')
             ],[
             InlineKeyboardButton('🏠 Hᴏᴍᴇ', callback_data='start'),
             InlineKeyboardButton('🔐 Cʟᴏsᴇ', callback_data='close_data')
@@ -343,3 +343,4 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
         )
+        
