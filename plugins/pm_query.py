@@ -20,23 +20,14 @@ else:
     from config import Config
 
 
-@Client.on_message(filters.command("start"))
-async def start(client, message):
-        buttons = [[
-            InlineKeyboardButton('➕ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘs ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
-        ],[
-            InlineKeyboardButton('🔍 Sᴇᴀʀᴄʜ', switch_inline_query_current_chat=''),
-            InlineKeyboardButton('🤖 Uᴘᴅᴀᴛᴇs', url='https://t.me/OB_LINKS')
-        ],[
-            InlineKeyboardButton('ℹ️ Hᴇʟᴘ', callback_data='help'),
-            InlineKeyboardButton('😊 Aʙᴏᴜᴛ', callback_data='about')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await message.reply_photo(
-            photo=random.choice(Presets.WELCOME_PIC),
-            caption=Presets.WELCOME_TEXT.format(message.from_user.mention),
-            reply_markup=reply_markup,
-            parse_mode='html'
+@Client.on_message(filters.private & filters.text)
+async def bot_pm(client: Bot, message: Message):
+    if message.text == "/start":
+        await client.send_message(
+            chat_id=message.chat.id,
+            text=Presets.WELCOME_TEXT.format(message.from_user.first_name),
+            parse_mode='html',
+            disable_web_page_preview=True
         )
         return
     try:
@@ -45,13 +36,12 @@ async def start(client, message):
         base64_bytes = b64decode(query_bytes)
         secret_query = base64_bytes.decode("ascii")
     except Exception:
-        msg = await message.reply_photo(
-            photo=random.choice(Presets.WELCOME_PIC),
-            caption=Presets.WELCOME_TEXT.format(message.from_user.mention),
-            reply_markup=reply_markup,
-            parse_mode='html'
+        msg = await client.send_message(
+            chat_id=message.chat.id,
+            text=Presets.BOT_PM_TEXT,
+            reply_to_message_id=message.message_id
         )
-        time.sleep(e.x)
+        time.sleep(6)
         try:
             await msg.delete()
             await message.delete()
@@ -59,11 +49,11 @@ async def start(client, message):
             pass
         return
     try:
-        await message.reply_photo(
-            photo=random.choice(Presets.WELCOME_PIC),
-            caption=Presets.WELCOME_TEXT.format(message.from_user.mention),
-            reply_markup=reply_markup,
-            parse_mode='html'
+        await client.send_message(
+            chat_id=message.chat.id,
+            text=Presets.WELCOME_TEXT.format(message.from_user.first_name),
+            parse_mode='html',
+            disable_web_page_preview=True
         )
         if secret_query:
             for channel in Config.CHANNELS:
