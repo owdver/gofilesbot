@@ -9,9 +9,9 @@ from bot import Bot
 from presets import Presets
 from base64 import b64decode
 from helper.file_size import get_size
-from pyrogram.types import Message
+from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram.errors import FloodWait
-from pyrogram import Client, filters
+from pyrogram.types import Client, filters
 
 if os.environ.get("ENV", False):
     from sample_config import Config
@@ -19,9 +19,18 @@ else:
     from config import Config
 
 
-@Client.on_message(filters.command("start")
-async def bot_pm(client: Bot, message: Message):
-    if message.text == "/start":
+@Client.on_message(filters.command("start"))
+async def start(client, message):
+    if message.chat.type in ['group', 'supergroup']:
+        buttons = [
+            [
+                InlineKeyboardButton('🤖 Uᴘᴅᴀᴛᴇs', url='https://t.me/OB_LINKS')
+            ],
+            [
+                InlineKeyboardButton('ℹ️ Hᴇʟᴘ', url="https://t.me/OB_ANYFILTERBOT?start=help"),
+            ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+                
         await client.send_message(
             chat_id=message.chat.id,
             text=Presets.WELCOME_TEXT.format(message.from_user.first_name),
