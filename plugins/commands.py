@@ -305,7 +305,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "howtouse":
         buttons = [[
             InlineKeyboardButton('👩‍🦯 Bᴀᴄᴋ', callback_data='help'),
-            InlineKeyboardButton('⏹️ Bᴜᴛᴛᴏɴs', callback_data='button')
+            InlineKeyboardButton('❗ MRequest', callback_data='button')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -313,13 +313,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
         )
-    elif query.data == "button":
+    elif query.data == "mrequest":
         buttons = [[
-            InlineKeyboardButton('👩‍🦯 Bᴀᴄᴋ', callback_data='manuelfilter')
+            InlineKeyboardButton('👩‍🦯 Bᴀᴄᴋ', callback_data='howtouse')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
-            text=Presets.BUTTON_TXT,
+            text=Presets.MREQUEST,
             reply_markup=reply_markup,
             parse_mode='html'
         )
