@@ -1,12 +1,43 @@
-import asyncio
+import os
 import re
 import ast
+import math
+import json
+import time
+import shutil
+import asyncio
+import requests
 import pyrogram
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram import Client, filters
 from pyrogram.errors import FloodWait, UserIsBlocked, MessageNotModified, PeerIdInvalid
 from presets import Presets
   
+  
+@Client.on_message(filters.command('id') & (filters.private | filters.group))
+async def showid(client, message):
+    chat_type = message.chat.type
+
+    if chat_type == "private":
+        user_id = message.chat.id
+        await message.reply_text(
+            f"Your ID : `{user_id}`",
+            parse_mode="md",
+            quote=True
+        )
+    elif (chat_type == "group") or (chat_type == "supergroup"):
+        user_id = message.from_user.id
+        chat_id = message.chat.id
+        if message.reply_to_message:
+            reply_id = f"Replied User ID : `{message.reply_to_message.from_user.id}`"
+        else:
+            reply_id = ""
+        await message.reply_text(
+            f"Your ID : `{user_id}`\nThis Group ID : `{chat_id}`\n\n{reply_id}",
+            parse_mode="md",
+            quote=True
+        )   
+        
 @Client.on_callback_query()
 async def cb_handler(client: Client, query: CallbackQuery):
     if query.data == "close_data":
