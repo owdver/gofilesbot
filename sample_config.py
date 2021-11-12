@@ -40,7 +40,7 @@ class Config(object):
     CHANNELS = set(int(x) for x in os.environ.get("CHANNELS", "").split())
     
     # ID of Channel from which the bot should Send files
-    CHAT = os.environ.get("CHAT", "-1001498423975")
+    CHAT = os.environ.get("CHAT", "-1001567765831")
 
     # Authorized users to perform delete messages in group
     AUTH_USERS = set(int(x) for x in os.environ.get("AUTH_USERS", "").split())
