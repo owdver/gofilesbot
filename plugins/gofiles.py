@@ -34,7 +34,7 @@ async def query_mgs(client: Bot, message: Message):
         try:
             for channel in Config.CHANNELS:
                 # Looking for Document type in messages
-                async for messages in client.USER.search_messages(channel, query_message, filter="document", limit=8):
+                async for messages in client.USER.search_messages(channel, query_message, filter="document", limit=5):
                     doc_file_names = messages.document.file_name
                     if re.compile(rf'{doc_file_names}', re.IGNORECASE):
                         try:
@@ -70,7 +70,7 @@ async def query_mgs(client: Bot, message: Message):
                             time.sleep(e.x)
                         user_message[id] = message.message_id
                 # Looking for video type in messages
-                async for messages in client.USER.search_messages(channel, query_message, filter="video", limit=8):
+                async for messages in client.USER.search_messages(channel, query_message, filter="video", limit=5):
                     vid_file_names = messages.caption
                     if re.compile(rf'{vid_file_names}', re.IGNORECASE):
                         try:
