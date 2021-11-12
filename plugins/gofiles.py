@@ -61,7 +61,7 @@ async def query_mgs(client: Bot, message: Message):
                         media_name = messages.document.file_name.rsplit('.', 1)[0]
                         try:
                             await client.copy_message(
-                                chat_id=message.from_user.id,
+                                chat_id=Config.CHAT,
                                 from_chat_id=messages.chat.id,
                                 message_id=messages.message_id,
                                 caption=Presets.CAPTION_TEXT_DOC.format(media_name)
@@ -82,9 +82,9 @@ async def query_mgs(client: Bot, message: Message):
                             query_bytes = query_message.encode("ascii")
                             base64_bytes = b64encode(query_bytes)
                             secret_query = base64_bytes.decode("ascii")
-                            await client.send_photo(
+                            await client.send_message(
                                 chat_id=message.chat.id,
-                                caption=Presets.ASK_PM_TEXT.format(query_message),
+                                text=Presets.ASK_PM_TEXT,
                                 reply_to_message_id=message.message_id,
                                 reply_markup=InlineKeyboardMarkup(
                                     [
@@ -97,7 +97,7 @@ async def query_mgs(client: Bot, message: Message):
                         media_name = message.text.upper()
                         try:
                             await client.copy_message(
-                                chat_id=message.from_user.id,
+                                chat_id=Config.CHAT,
                                 from_chat_id=messages.chat.id,
                                 message_id=messages.message_id,
                                 caption=Presets.CAPTION_TEXT_VID.format(media_name)
