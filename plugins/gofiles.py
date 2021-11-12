@@ -146,10 +146,18 @@ async def query_mgs(client: Bot, message: Message):
             try:
                 await client.send_message(
                     chat_id=message.chat.id,
-                    text=Presets.NO_MEDIA.format(query_message, updated_query),
+                    text=Presets.NO_MEDIA.format(query_message, query_message),
                     reply_to_message_id=message.message_id,
                     parse_mode='html',
-                    disable_web_page_preview=True
+                    disable_web_page_preview=True,
+                    reply_markup=InlineKeyboardMarkup(
+                        [
+                            [
+                                InlineKeyboardButton( "Must Read | Click Here", url="t.me/{}".format(info.username))
+                            ],[
+                                InlineKeyboardButton( "Gᴏᴏɢʟᴇ Sᴇᴀʀᴄʜ", url="https://www.google.com/search?q={}".format(updated_query)
+                            ]
+                        ])
                 )
             except Exception:
                 pass
