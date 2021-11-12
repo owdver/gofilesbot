@@ -148,8 +148,6 @@ async def query_mgs(client: Bot, message: Message):
                         [
                             [InlineKeyboardButton(
                                 "👉 Click Here To View 👈", url="t.me/{}".format(info.username))
-                             ],[InlineKeyboardButton(
-                                "👉 Click Here To View 👈", url="t.me/{}".format(info.username))
                              ]
                         ])
                 )
