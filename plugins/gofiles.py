@@ -12,7 +12,7 @@ from init import user_message
 from helper.file_size import get_size
 from imdb import IMDb
 from pyrogram import Client, filters
-from pyrogram.errors import InputUserDeactivated, UserNotParticipant, FloodWait, UserIsBlocked, PeerIdInvalid
+from pyrogram.errors import FloodWait
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
 if os.environ.get("ENV", False):
