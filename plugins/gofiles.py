@@ -153,7 +153,7 @@ async def query_mgs(client: Bot, message: Message):
                     buttons = [[
                         InlineKeyboardButton('Mᴜsᴛ Rᴇᴀᴅ | Cʟɪᴄᴋ Hᴇʀᴇ', url='http://t.me/OB_FILTERROBOT?startgroup=true')
                     ],[
-                        InlineKeyboardButton('Gᴏᴏɢʟᴇ Sᴇᴀʀᴄʜ', https://www.google.com/search?q={}.format(updated_query))
+                        InlineKeyboardButton('Gᴏᴏɢʟᴇ Sᴇᴀʀᴄʜ', url="https://www.google.com/search?q={}".format(updated_query))
                     ]]
                 )
             except Exception:
