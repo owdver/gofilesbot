@@ -73,7 +73,6 @@ async def bot_pm(client: Bot, message: Message):
                     file_size = get_size(messages.document.file_size)
                     if re.compile(rf'{doc_file_names}', re.IGNORECASE):
                         media_name = messages.document.file_name.rsplit('.', 1)[0]
-                        media_format = messages.document.file_name.split('.')[-1]
                         await client.send_chat_action(
                             chat_id=message.from_user.id,
                             action="upload_document"
@@ -90,7 +89,6 @@ async def bot_pm(client: Bot, message: Message):
                 # Looking for video type in messages
                 async for messages in client.USER.search_messages(channel, secret_query, filter="video", limit=10):
                     vid_file_names = messages.caption
-                    file_size = get_size(messages.video.file_size)
                     if re.compile(rf'{vid_file_names}', re.IGNORECASE):
                         media_name = secret_query.upper()
                         await client.send_chat_action(
