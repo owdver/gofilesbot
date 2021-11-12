@@ -47,7 +47,7 @@ async def query_mgs(client: Bot, message: Message):
                             base64_bytes = b64encode(query_bytes)
                             secret_query = base64_bytes.decode("ascii")
                             await client.send_message(
-                                chat_id=Config.CHAT,
+                                chat_id=message.chat.id,
                                 text=Presets.ASK_PM_TEXT.format(query_message),
                                 reply_to_message_id=message.message_id,
                                 reply_markup=InlineKeyboardMarkup(
