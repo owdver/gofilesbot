@@ -150,14 +150,11 @@ async def query_mgs(client: Bot, message: Message):
                     reply_to_message_id=message.message_id,
                     parse_mode='html',
                     disable_web_page_preview=True,
-                    reply_markup=InlineKeyboardMarkup(
-                        [
-                            [
-                                InlineKeyboardButton( "Must Read | Click Here", url="t.me/{}".format(info.username))
-                            ],[
-                                InlineKeyboardButton( "Gᴏᴏɢʟᴇ Sᴇᴀʀᴄʜ", url="https://www.google.com/search?q={}".format(updated_query)
-                            ]
-                        ])
+                    buttons = [[
+                        InlineKeyboardButton('Mᴜsᴛ Rᴇᴀᴅ | Cʟɪᴄᴋ Hᴇʀᴇ', url='http://t.me/OB_FILTERROBOT?startgroup=true')
+                    ],[
+                        InlineKeyboardButton('Gᴏᴏɢʟᴇ Sᴇᴀʀᴄʜ', https://www.google.com/search?q={}.format(updated_query))
+                    ]]
                 )
             except Exception:
                 pass
