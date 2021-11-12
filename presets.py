@@ -28,10 +28,7 @@ class Presets(object):
     MEDIA_SEND_TEXT = "<code>Media dispatched as PM 🥳</code>"
     
     
-    NO_MEDIA = "Requested movie: <b>{}</b>\n\n<b>Not available " \
-               "Right Now</b>\n<code>Possible Causes : 🤔\n\n⭕️ Not " \
-               "released yet</code>\n⭕️ <a href='https://www.google.com/search?q={}'> Spelled incorrectly</a>\n" \
-               "<code>⭕️ Unwanted texts in Msgs\n⭕ Asking theatre prints\n⭕ Not in ma Database</code>"
+    NO_MEDIA = """ Couldn't Find {} Movie ? Please Click MUST READ Button Below..!!\n\n{} മൂവി കിട്ടിയില്ല അല്ലെ ? താഴെ ഉള്ള ബട്ടനിൽ ക്ലിക്ക് ചെയി..!! """
     
     
     BLOCK_LIST = ['http://', 'https://', '@', '#', 'bit.ly', 't.me', '/']
@@ -40,19 +37,19 @@ class Presets(object):
     
     #Added By @OwDvEr!
     
-    START_TXT = """<b>Hᴇʟᴏ {},\nMʏ Nᴀᴍᴇ Is <a href='https://t.me/OB_FILTERROBOT'>Sᴄᴀʀʟᴇᴛᴛ</a>, I Cᴀɴ Pʀᴏᴠɪᴅᴇ Mᴏᴠɪᴇs, Jᴜsᴛ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ Aɴᴅ Eɴᴊᴏʏ 😍</b>"""
+    START_TXT = """<b>Hᴇʟᴏ {},\nMʏ Nᴀᴍᴇ Is <a href='https://t.me/OB_FILTERROBOT'>Tᴏᴍ Hɪᴅᴅʟᴇsᴛᴏɴ</a>, I Cᴀɴ Pʀᴏᴠɪᴅᴇ Mᴏᴠɪᴇs, Jᴜsᴛ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ Aɴᴅ Eɴᴊᴏʏ 😍</b>"""
     
     
-    HELP_TXT = """<b>Hey {},\nHere Is The Help For Using This Bot</b>\n\n<i>- Bot Button For How to use this bot\n- Group Button For How to Connect This Bot and Your Group\n- Channel Button For How to add Your Channel To Database</i>"""
+    HELP_TXT = """<b>Hey {},\nHᴇʀᴇ Is Tʜᴇ Hᴇʟᴘ Fᴏʀ Usɪɴɢ Tʜɪs Bᴏᴛ</b>\n\n<i>- Bᴏᴛ Bᴜᴛᴛᴏɴ Fᴏʀ Hᴏᴡ ᴛᴏ Usᴇ Tʜɪs Bᴏᴛ\n-Gʀᴏᴜᴘ Bᴜᴛᴛᴏɴ Fᴏʀ Hᴏᴡ Tᴏ Cᴏɴɴᴇᴄᴛ Tʜɪs Bᴏᴛ Aɴᴅ Yᴏᴜʀ Gʀᴏᴜᴘ\n- Cʜᴀɴɴᴇʟ Bᴜᴛᴛᴏɴ Fᴏʀ Hᴏᴡ Tᴏ Aᴅᴅ Yᴏᴜʀ Cʜᴀɴɴᴇʟ Tᴏ Dᴀᴛᴀʙᴀsᴇ</i>"""
     
     
-    ABOUT_TXT ="""<b>✯ Mʏ Nᴀᴍᴇ: Sᴄᴀʀʟᴇᴛᴛ Jᴏʜᴀɴssᴏɴ\n✯ Cʀᴇᴀᴛᴏʀ: Oᴡᴅᴠᴇʀ Bᴏᴛ\n✯ Lɪʙʀᴀʀʏ: Pʏʀᴏɢʀᴀᴍ\n✯ Lᴀɴɢᴜᴀɢᴇ: Pʏᴛʜᴏɴ 3\n✯ Bᴏᴛ Sᴇʀᴠᴇʀ: Hᴇʀᴏᴋᴜ\n✯ Bᴜɪʟᴅ Sᴛᴀᴛᴜs: ᴠ1.0.6 [ Bᴇᴛᴀ ]</b>"""
+    ABOUT_TXT ="""<b>✯ Mʏ Nᴀᴍᴇ: Tᴏᴍ Hɪᴅᴅʟᴇsᴛᴏɴ\n✯ Cʀᴇᴀᴛᴏʀ: Oᴡᴅᴠᴇʀ Bᴏᴛ\n✯ Lɪʙʀᴀʀʏ: Pʏʀᴏɢʀᴀᴍ\n✯ Lᴀɴɢᴜᴀɢᴇ: Pʏᴛʜᴏɴ 3\n✯ Bᴏᴛ Sᴇʀᴠᴇʀ: Hᴇʀᴏᴋᴜ\n✯ Bᴜɪʟᴅ Sᴛᴀᴛᴜs: ᴠ1.0.6 [ Bᴇᴛᴀ ]</b>"""
 
     
-    SOURCE_TXT = """<b>Nᴏᴛᴇ:</b>\n- Sᴄᴀʀʟᴇᴛᴛ Jᴏʜᴀɴssᴏɴ Is A Cʟᴏɴᴇ Oғ gofiles\n- Sᴏᴜʀᴄᴇ - https://github.com/m4mallu/gofilesbot \n\nUpdates Channel - @OB_LINKS"""
+    SOURCE_TXT = """<b>Nᴏᴛᴇ:</b>\n- Tᴏᴍ Hɪᴅᴅʟᴇsᴛᴏɴ Is ᴀ Cʟᴏɴᴇ Oғ ᴍ4ᴍᴀʟʟᴜ's GᴏFɪʟᴇsBᴏᴛ\n- Sᴏᴜʀᴄᴇ - https://github.com/m4mallu/gofilesbot \n\nUᴘᴅᴀᴛᴇ Cʜᴀɴɴᴇʟ - @OB_LINKS"""
     
     
-    HOWTO_USE = """- Just go to a group where am exist\n  (Official Group @OB_MG)\n- Ask a movie in format to know more click \n  Format Button\n- When i will reply for your message come back here"""
+    HOWTO_USE = """- Jᴜsᴛ Gᴏ Tᴏ A Gʀᴏᴜᴘ Wʜᴇʀᴇ ᴀᴍ Exɪsᴛ\n  (Oғғɪᴄɪᴀʟ Gʀᴏᴜᴘ @OB_MG)\n- Asᴋ A Mᴏᴠɪᴇ Iɴ Fᴏʀᴍᴀᴛ Tᴏ Kɴᴏᴡ Mᴏʀᴇ Cʟɪᴄᴋ Fᴏʀᴍᴀᴛ Bᴜᴛᴛᴏɴ\n- Tʜᴇɴ Bᴏᴛ Wɪʟʟ Sᴇɴᴅ Tʜᴇ Fɪʟᴇs Hᴇʀᴇ"""
 
     
     FORMAT = """<b>Things to look out for when asking for a movie in my group 👇</b><i>\n\n<b>1.</b> Asking for an unreleased or predvd (HQRip, Camrip, DVDScr) movie is a strictly prohibited \n<b>2.</b> Never send Send, Please,Kittumo, Undo...etc while request a movie\n<b>3.</b> Ask movies in correct spelling\n<b>4.</b> If you have not received the movie by sending the correct spelling, send it again with the year \n<b>eg: Kuruthi (2021) or Kuruthi 2021</b></i>"""
