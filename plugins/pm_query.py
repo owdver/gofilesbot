@@ -100,7 +100,7 @@ async def bot_pm(client: Bot, message: Message):
                                 chat_id=message.chat.id,
                                 from_chat_id=messages.chat.id,
                                 message_id=messages.message_id,
-                                caption=caption=Presets.CAPTION_TEXT_VID.format(media_name)
+                                caption=Presets.CAPTION_TEXT_VID.format(media_name)
                             )
                         except FloodWait as e:
                             time.sleep(e.x)
