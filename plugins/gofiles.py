@@ -49,7 +49,7 @@ async def query_mgs(client: Bot, message: Message):
                             secret_query = base64_bytes.decode("ascii")
                             await client.send_message(
                                 chat_id=message.chat.id,
-                                text=Presets.ASK_PM_TEXT,
+                                text=Presets.ASK_PM_TEXT.format(query_message),
                                 reply_to_message_id=message.message_id,
                                 reply_markup=InlineKeyboardMarkup(
                                     [
@@ -60,14 +60,12 @@ async def query_mgs(client: Bot, message: Message):
                             )
                             return
                         media_name = messages.document.file_name.rsplit('.', 1)[0]
-                        media_format = messages.document.file_name.split('.')[-1]
                         try:
                             await client.copy_message(
                                 chat_id=message.from_user.id,
                                 from_chat_id=messages.chat.id,
                                 message_id=messages.message_id,
-                                caption=Config.GROUP_U_NAME+Presets.CAPTION_TEXT_DOC.format(media_name,
-                                                                                            media_format, file_size)
+                                caption=Presets.CAPTION_TEXT_DOC.format(media_name)
                             )
                         except FloodWait as e:
                             time.sleep(e.x)
@@ -75,7 +73,6 @@ async def query_mgs(client: Bot, message: Message):
                 # Looking for video type in messages
                 async for messages in client.USER.search_messages(channel, query_message, filter="video", limit=10):
                     vid_file_names = messages.caption
-                    file_size = get_size(messages.video.file_size)
                     if re.compile(rf'{vid_file_names}', re.IGNORECASE):
                         try:
                             await client.send_chat_action(
@@ -88,7 +85,7 @@ async def query_mgs(client: Bot, message: Message):
                             secret_query = base64_bytes.decode("ascii")
                             await client.send_photo(
                                 chat_id=message.chat.id,
-                                caption=Presets.ASK_PM_TEXT,
+                                caption=Presets.ASK_PM_TEXT.format(query_message),
                                 reply_to_message_id=message.message_id,
                                 reply_markup=InlineKeyboardMarkup(
                                     [
@@ -104,7 +101,7 @@ async def query_mgs(client: Bot, message: Message):
                                 chat_id=message.from_user.id,
                                 from_chat_id=messages.chat.id,
                                 message_id=messages.message_id,
-                                caption=Config.GROUP_U_NAME+Presets.CAPTION_TEXT_VID.format(media_name, file_size)
+                                caption=Presets.CAPTION_TEXT_VID.format(media_name)
                             )
                         except FloodWait as e:
                             time.sleep(e.x)
