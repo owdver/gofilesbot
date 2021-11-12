@@ -36,7 +36,6 @@ async def query_mgs(client: Bot, message: Message):
                 # Looking for Document type in messages
                 async for messages in client.USER.search_messages(channel, query_message, filter="document", limit=10):
                     doc_file_names = messages.document.file_name
-                    file_size = get_size(messages.document.file_size)
                     if re.compile(rf'{doc_file_names}', re.IGNORECASE):
                         try:
                             await client.send_chat_action(
