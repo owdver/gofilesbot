@@ -143,14 +143,19 @@ async def query_mgs(client: Bot, message: Message):
                 await client.send_message(
                     chat_id=message.chat.id,
                     text=Presets.NO_MEDIA.format(query_message, query_message),
-                    reply_to_message_id=message.message_id,
+                    reply_to_message_id=user_message[id],
                     parse_mode='html',
-                    disable_web_page_preview=True,
-                    buttons = [[
-                        InlineKeyboardButton('Mᴜsᴛ Rᴇᴀᴅ | Cʟɪᴄᴋ Hᴇʀᴇ', url='http://t.me/OB_FILTERROBOT?startgroup=true')
-                    ],[
-                        InlineKeyboardButton('Gᴏᴏɢʟᴇ Sᴇᴀʀᴄʜ', url="https://www.google.com/search?q={}".format(updated_query))
-                    ]]
+                    reply_markup=InlineKeyboardMarkup(
+                        [
+                            [
+                                
+                                InlineKeyboardButton('Mᴜsᴛ Rᴇᴀᴅ | Cʟɪᴄᴋ Hᴇʀᴇ', url='http://t.me/OB_FILTERROBOT')
+                            ],
+                            [
+                                InlineKeyboardButton('Gᴏᴏɢʟᴇ Sᴇᴀʀᴄʜ', url="https://www.google.com/search?q={}".format(updated_query))
+                            ]
+                        ]
+                    )
                 )
             except Exception:
                 pass
