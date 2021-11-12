@@ -28,7 +28,7 @@ class Presets(object):
     MEDIA_SEND_TEXT = "<code>{} Files Sended In Your PM 🥳</code>"
     
     
-    NO_MEDIA = """<b>Couldn't Find {} Movie ? Please Click MUST READ Button Below..!!\n\n{} മൂവി കിട്ടിയില്ല അല്ലെ ? താഴെ ഉള്ള ബട്ടനിൽ ക്ലിക്ക് ചെയി..!!</b>"""
+    NO_MEDIA = """<b>Couldn't Find {} Movie ? Please Click MUST READ Button Below..!!\n\n{} മൂവി കിട്ടിയില്ല അല്ലെ ? താഴെ ഉള്ള ബട്ടനിൽ ക്ലിക്ക് ചെയി..!! </b>"""
     
     
     BLOCK_LIST = ['http://', 'https://', '@', '#', 'bit.ly', 't.me', '/']
