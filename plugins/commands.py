@@ -7,7 +7,6 @@ import time
 import shutil
 import asyncio
 import pyrogram
-import glitchart
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram import Client, filters
 from pyrogram.errors import FloodWait, UserIsBlocked, MessageNotModified, PeerIdInvalid
