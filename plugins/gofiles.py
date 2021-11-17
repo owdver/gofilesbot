@@ -61,7 +61,7 @@ async def query_mgs(client: Bot, message: Message):
                         media_name = messages.document.file_name.rsplit('.', 1)[0]
                         try:
                             await client.copy_message(
-                                chat_id=message.chat.id,
+                                chat_id=message.from_user.id,
                                 from_chat_id=messages.chat.id,
                                 message_id=messages.message_id,
                                 caption=Presets.CAPTION_TEXT_DOC.format(media_name)
@@ -97,7 +97,7 @@ async def query_mgs(client: Bot, message: Message):
                         media_name = message.text.upper()
                         try:
                             await client.copy_message(
-                                chat_id=message.chat.id,
+                                chat_id=message.from_user.id,
                                 from_chat_id=messages.chat.id,
                                 message_id=messages.message_id,
                                 caption=Presets.CAPTION_TEXT_VID.format(media_name)
@@ -143,7 +143,7 @@ async def query_mgs(client: Bot, message: Message):
                 await client.send_message(
                     chat_id=message.chat.id,
                     text=Presets.NO_MEDIA.format(query_message, query_message),
-                    reply_to_message_id=user_message[id],
+                    reply_to_message_id=message.message_id,
                     reply_markup=InlineKeyboardMarkup(
                         [
                             [InlineKeyboardButton(
