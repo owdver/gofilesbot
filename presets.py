@@ -2,10 +2,10 @@
 
 class Presets(object):
     
-    CAPTION_TEXT_DOC = "<b><code>{}</code><b>♻️ 𝙅𝙊𝙄𝙉 :- https://t.me/joinchat/Ur8bdKHGNRdBoeHW</b>"
+    CAPTION_TEXT_DOC = "<code>{}</code><b>\n\n♻️ 𝙅𝙊𝙄𝙉 :- https://t.me/joinchat/Ur8bdKHGNRdBoeHW</b>"
     
     
-    CAPTION_TEXT_VID = "<b><code>{}</code><b>♻️ 𝙅𝙊𝙄𝙉 :- https://t.me/joinchat/Ur8bdKHGNRdBoeHW</b>"
+    CAPTION_TEXT_VID = "<code>{}</code><b>\n\n♻️ 𝙅𝙊𝙄𝙉 :- https://t.me/joinchat/Ur8bdKHGNRdBoeHW</b>"
     
     
     ASK_PM_TEXT = "<b>Cʟɪᴄᴋ Tʜᴇ Bᴇʟᴏᴡ Bᴜᴛᴛᴏɴ</b>"
