@@ -10,6 +10,7 @@ import pyrogram
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram import Client, filters
 from pyrogram.errors import FloodWait, UserIsBlocked, MessageNotModified, PeerIdInvalid
+from info import ADMINS
 from sample_config import Config
 from presets import Presets
 
@@ -38,7 +39,7 @@ async def showid(client, message):
             quote=True
         )
         
-@Client.on_message(filters.command('logs') & filters.user(Config.AUTH_USERS))
+@Client.on_message(filters.command('logs') & filters.user(ADMINS))
 async def log_file(bot, message):
     """Send log file"""
     try:
