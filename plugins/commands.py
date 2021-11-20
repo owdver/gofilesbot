@@ -10,6 +10,7 @@ import pyrogram
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram import Client, filters
 from pyrogram.errors import FloodWait, UserIsBlocked, MessageNotModified, PeerIdInvalid
+from sample_config import Config
 from presets import Presets
 
 
@@ -36,6 +37,14 @@ async def showid(client, message):
             parse_mode="md",
             quote=True
         )
+        
+@Client.on_message(filters.command('logs') & filters.user(Config.AUTH_USER))
+async def log_file(bot, message):
+    """Send log file"""
+    try:
+        await message.reply_document('TelegramBot.log')
+    except Exception as e:
+        await message.reply(str(e))
         
         
 @Client.on_message(filters.command('info') & (filters.private | filters.group))
