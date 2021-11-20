@@ -147,10 +147,12 @@ async def query_mgs(client: Bot, message: Message):
                     parse_mode='html',
                     disable_web_page_preview=True,
                     buttons = [
-                        InlineKeyboardButton('Must Read', url="https://www.google.com/search?q={updated_query}")
-                    ],
-                    [
-                        InlineKeyboardButton('Google', url="https://www.google.com/search?q={updated_query}")
+                        [
+                            InlineKeyboardButton('Must Read', url="https://www.google.com/search?q={updated_query}")
+                        ],
+                        [
+                            InlineKeyboardButton('Google', url="https://www.google.com/search?q={updated_query}")
+                        ]
                     ]
                 )
             except Exception:
