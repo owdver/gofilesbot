@@ -145,7 +145,7 @@ async def query_mgs(client: Bot, message: Message):
                     text=Presets.NO_MEDIA.format(query_message, query_message, updated_query),
                     reply_to_message_id=message.message_id,
                     parse_mode='html',
-                    disable_web_page_preview=True
+                    disable_web_page_preview=True,
                     reply_markup=InlineKeyboardMarkup(
                         [
                             [InlineKeyboardButton(
