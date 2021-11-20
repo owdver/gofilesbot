@@ -44,14 +44,14 @@ async def bot_pm(client: Bot, message: Message):
                 invite_link = await client.create_chat_invite_link(int(AUTH_CHANNEL))
         except ChatAdminRequired:
             logger.error("Mᴀᴋᴇ Sᴜʀᴇ Bᴏᴛ Is Aᴅᴍɪɴ Iɴ FᴏʀᴄᴇSᴜʙ Cʜᴀɴɴᴇʟ")
-        return
-    btn = [
-        [
-            InlineKeyboardButton(
-                "🤖 Jᴏɪɴ Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ", url=invite_link.invite_link
-            )
+            return
+        btn = [
+            [
+                InlineKeyboardButton(
+                    "🤖 Jᴏɪɴ Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ", url=invite_link.invite_link
+                )
+            ]
         ]
-    ]
 
         if message.command[1] != "subscribe":
             btn.append([InlineKeyboardButton(" 🔄 Tʀʏ Aɢᴀɪɴ", callback_data=f"checksub#{message.command[1]}")])
