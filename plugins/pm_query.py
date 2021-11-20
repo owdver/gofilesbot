@@ -9,6 +9,8 @@ from bot import Bot
 from presets import Presets
 from base64 import b64decode
 from helper.file_size import get_size
+from sample_config import AUTH_CHANNEL
+from utils import is_subscribed
 from pyrogram import Client, filters
 from pyrogram.errors import FloodWait
 from pyrogram.errors.exceptions.bad_request_400 import CHAT_ADMIN_REQUIRED
