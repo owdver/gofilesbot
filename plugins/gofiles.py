@@ -142,14 +142,14 @@ async def query_mgs(client: Bot, message: Message):
             try:
                 await client.send_message(
                     chat_id=message.chat.id,
-                    text=Presets.NO_MEDIA.format(query_message, query_message),
+                    text=Presets.NO_MEDIA.format(query_message, query_message, updated_query),
                     reply_to_message_id=message.message_id,
+                    parse_mode='html',
+                    disable_web_page_preview=True
                     reply_markup=InlineKeyboardMarkup(
                         [
                             [InlineKeyboardButton(
-                                "👉 Click Here To View 👈", url="t.me/{}".format(info.username))
-                             ]
-                        ])
+                                "Click Here & Go to Google", url="https://www.google.com/search?q={updated_query}"
                 )
             except Exception:
                 pass
