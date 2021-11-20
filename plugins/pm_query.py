@@ -11,7 +11,7 @@ from base64 import b64decode
 from helper.file_size import get_size
 from pyrogram import Client, filters
 from pyrogram.errors import FloodWait
-from pyrogram.errors.exceptions.bad_request_400 import ChatAdminRequired
+from pyrogram.errors.exceptions.bad_request_400 import CHAT_ADMIN_REQUIRED
 from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
 
 if os.environ.get("ENV", False):
@@ -42,7 +42,7 @@ async def bot_pm(client: Bot, message: Message):
         if AUTH_CHANNEL and not await is_subscribed(client, message):
             try:
                 invite_link = await client.create_chat_invite_link(int(AUTH_CHANNEL))
-        except ChatAdminRequired:
+        except CHAT_ADMIN_REQUIRED:
             logger.error("Mᴀᴋᴇ Sᴜʀᴇ Bᴏᴛ Is Aᴅᴍɪɴ Iɴ FᴏʀᴄᴇSᴜʙ Cʜᴀɴɴᴇʟ")
             return
         btn = [
