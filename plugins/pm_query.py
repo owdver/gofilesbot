@@ -79,6 +79,7 @@ async def bot_pm(client: Bot, message: Message):
             reply_markup=reply_markup,
             parse_mode='html'
         )
+        return
     try:
         query_message = message.text.split(" ")[-1]
         query_bytes = query_message.encode("ascii")
