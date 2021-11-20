@@ -9,18 +9,12 @@ from bot import Bot
 from presets import Presets
 from base64 import b64decode
 from helper.file_size import get_size
-from sample_config import AUTH_CHANNEL
+from sample_config import Config
 from utils import is_subscribed
 from pyrogram import Client, filters
 from pyrogram.errors import FloodWait
 from pyrogram.errors.exceptions.bad_request_400 import ChatAdminRequired
 from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
-
-if os.environ.get("ENV", False):
-    from sample_config import Config
-else:
-    from config import Config
-
 
 @Client.on_message(filters.private & filters.text)
 async def bot_pm(client: Bot, message: Message):
