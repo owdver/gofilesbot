@@ -62,6 +62,23 @@ async def bot_pm(client: Bot, message: Message):
             parse_mode="markdown"
             )
         return
+    if len(message.command) ==2 and message.command[1] in ["subscribe", "error", "okay"]:
+        buttons = [[
+            InlineKeyboardButton('➕ Add Me To Your Group ➕', url=f'http://t.me/OB_FILTERROBOT?startgroup=true')
+        ],[
+            InlineKeyboardButton('🔍 Search', switch_inline_query_current_chat=''),
+            InlineKeyboardButton('🤖 Updates', url='https://t.me/OB_LINKS')
+        ],[
+            InlineKeyboardButton('ℹ️ Help', callback_data='help'),
+            InlineKeyboardButton('😊 About', callback_data='about')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await message.reply_photo(
+            photo=random.choice(Config.PICS),
+            caption=Presets.START_TXT.format(message.from_user.mention),
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
     try:
         query_message = message.text.split(" ")[-1]
         query_bytes = query_message.encode("ascii")
