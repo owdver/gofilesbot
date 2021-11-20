@@ -150,6 +150,7 @@ async def query_mgs(client: Bot, message: Message):
                         [
                             [InlineKeyboardButton(
                                 "Click Here & Go to Google", url="https://www.google.com/search?q={updated_query}"
+                                ]
                 )
             except Exception:
                 pass
