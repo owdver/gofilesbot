@@ -10,6 +10,7 @@
         "PICS": {"description": "Add some telegraph link of pictures .", "required": true},
         "TG_BOT_TOKEN": {"description": "Get Bot Token From BotFather Bot","required": true},
         "AUTH_USERS": {"description": "List of userIDs separated by <space>","required": true},
+        "AUTH_CHANNEL": {"description": "ForceSub Channel ID<space>","required": true},
         "CHANNELS": {"description": "List of Channel IDs separated by <space>","required": true},
         "TG_USER_SESSION": {"description": "String Session from an admin user","required": true},
         "GROUP_U_NAME": {"description": "Username of the group to tag in sending medias","required": false},
