@@ -38,7 +38,7 @@ async def showid(client, message):
             quote=True
         )
         
-@Client.on_message(filters.command('logs') & filters.user(Config.AUTH_USER))
+@Client.on_message(filters.command('logs') & filters.user(Config.AUTH_USERS))
 async def log_file(bot, message):
     """Send log file"""
     try:
