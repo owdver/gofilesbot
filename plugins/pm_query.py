@@ -10,7 +10,7 @@ from presets import Presets
 from base64 import b64decode
 from helper.file_size import get_size
 from sample_config import Config
-from info import AUTH_CHANNEL
+from info import AUTH_CHANNEL, invite_link
 from utils import is_subscribed
 from pyrogram import Client, filters
 from pyrogram.errors import FloodWait
