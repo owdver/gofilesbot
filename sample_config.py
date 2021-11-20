@@ -44,10 +44,9 @@ class Config(object):
 
     # Authorized users to perform delete messages in group
     AUTH_USERS = set(int(x) for x in os.environ.get("AUTH_USERS", "").split())
-
-# ------------------------------------------ Optional Variables ------------------------------------------------------ #
-    # Username of the group to tag in sending medias
-    GROUP_U_NAME = os.environ.get("GROUP_U_NAME", "@MovieKeralam")
+    
+    # ForceSub Channel Id
+    AUTH_CHANNEL = os.environ.get("AUTH_CHANNEL", "")
 
 
 def LOGGER(name: str) -> logging.Logger:
