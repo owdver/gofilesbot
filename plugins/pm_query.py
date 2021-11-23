@@ -10,7 +10,7 @@ from presets import Presets
 from base64 import b64decode
 from helper.file_size import get_size
 from sample_config import Config
-from info import AUTH_CHANNEL, invite_link
+from info import AUTH_CHANNEL, CHANNEL USERNAME
 from utils import is_subscribed
 from pyrogram import Client, filters
 from pyrogram.errors import FloodWait
@@ -38,7 +38,7 @@ async def bot_pm(client: Bot, message: Message):
         )
     if AUTH_CHANNEL and not await is_subscribed(client, message):
         try:
-            invite_link = await client.create_chat_invite_link(int(AUTH_CHANNEL))
+            invite_link = await client.get_chat_invite_link(int(CHANNEL_USERNAME))
         except ChatAdminRequired:
             logger.error("Mᴀᴋᴇ Sᴜʀᴇ Bᴏᴛ Is Aᴅᴍɪɴ Iɴ FᴏʀᴄᴇSᴜʙ Cʜᴀɴɴᴇʟ")
             return
