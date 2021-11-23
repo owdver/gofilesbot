@@ -39,7 +39,7 @@ async def bot_pm(client: Bot, message: Message):
         )
     if AUTH_CHANNEL and not await is_subscribed(client, message):
         try:
-            invite_link = await client.export_chat_invite_link(int(AUTH_CHANNEL))
+            invite_link = await client.export_chat_invite_link(int(CHANNEL_USERNAME))
         except ChatAdminRequired:
             logger.error("Mᴀᴋᴇ Sᴜʀᴇ Bᴏᴛ Is Aᴅᴍɪɴ Iɴ FᴏʀᴄᴇSᴜʙ Cʜᴀɴɴᴇʟ")
             return
