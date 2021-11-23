@@ -4,6 +4,7 @@ import re
 import os
 import time
 import random
+import logging
 import asyncio
 from bot import Bot
 from presets import Presets
