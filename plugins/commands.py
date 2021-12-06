@@ -215,3 +215,70 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode='html'
         )
         
+        
+@Client.on_message(filters.command('ban') & filters.user(ADMINS))
+async def ban_a_user(bot, message):
+    # https://t.me/GetTGLink/4185
+    if len(message.command) == 1:
+        return await message.reply('Gɪᴠᴇ Mᴇ A Usᴇʀ ɪᴅ / Usᴇʀɴᴀᴍᴇ')
+    r = message.text.split(None)
+    if len(r) > 2:
+        reason = message.text.split(None, 2)[2]
+        chat = message.text.split(None, 2)[1]
+    else:
+        chat = message.command[1]
+        reason = "Nᴏ Rᴇᴀsᴏɴ Pʀᴏᴠɪᴅᴇᴅ"
+    try:
+        chat = int(chat)
+    except:
+        pass
+    try:
+        k = await bot.get_users(chat)
+    except PeerIdInvalid:
+        return await message.reply("Tʜɪs Is Aɴ Iɴᴠᴀʟɪᴅ Usᴇʀ, Mᴀᴋᴇ Sᴜʀᴇ I Mᴇᴛ Hɪᴍ Bᴇғᴏʀᴇ.")
+    except IndexError:
+        return await message.reply("Tʜɪs Mɪɢʜᴛ Bᴇ A Cʜᴀɴɴᴇʟ, Mᴀᴋᴇ Sᴜʀᴇ Iᴛs A Usᴇʀ.")
+    except Exception as e:
+        return await message.reply(f'Eʀʀᴏʀ - {e}')
+    else:
+        jar = await db.get_ban_status(k.id)
+        if jar['is_banned']:
+            return await message.reply(f"{k.mention} Is Aʟʀᴇᴀᴅʏ Bᴀɴɴᴇᴅ\nRᴇᴀsᴏɴ: {jar['ban_reason']}")
+        await db.ban_user(k.id, reason)
+        temp.BANNED_USERS.append(k.id)
+        await message.reply(f"Sᴜᴄᴄᴇssғᴜʟʟʏ Bᴀɴɴᴇᴅ {k.mention}")
+
+
+@Client.on_message(filters.command('unban') & filters.user(ADMINS))
+async def unban_a_user(bot, message):
+    if len(message.command) == 1:
+        return await message.reply('Gɪᴠᴇ Mᴇ A Usᴇʀ ɪᴅ / Usᴇʀɴᴀᴍᴇ')
+    r = message.text.split(None)
+    if len(r) > 2:
+        reason = message.text.split(None, 2)[2]
+        chat = message.text.split(None, 2)[1]
+    else:
+        chat = message.command[1]
+        reason = "Nᴏ Rᴇᴀsᴏɴ Pʀᴏᴠɪᴅᴇᴅ"
+    try:
+        chat = int(chat)
+    except:
+        pass
+    try:
+        k = await bot.get_users(chat)
+    except PeerIdInvalid:
+        return await message.reply("Tʜɪs Is Aɴ Iɴᴠᴀʟɪᴅ Usᴇʀ, Mᴀᴋᴇ Sᴜʀᴇ I Mᴇᴛ Hɪᴍ Bᴇғᴏʀᴇ.")
+    except IndexError:
+        return await message.reply("Tʜɪs Mɪɢʜᴛ Bᴇ A Cʜᴀɴɴᴇʟ, Mᴀᴋᴇ Sᴜʀᴇ Iᴛs A Usᴇʀ.")
+    except Exception as e:
+        return await message.reply(f'Eʀʀᴏʀ - {e}')
+    else:
+        jar = await db.get_ban_status(k.id)
+        if not jar['is_banned']:
+            return await message.reply(f"{k.mention} Is Nᴏᴛ Yᴇᴛ Bᴀɴɴᴇᴅ.")
+        await db.remove_ban(k.id)
+        temp.BANNED_USERS.remove(k.id)
+        await message.reply(f"Sᴜᴄᴄᴇssғᴜʟʟʏ Uɴʙᴀɴɴᴇᴅ {k.mention}")
+
+                            
+                            
